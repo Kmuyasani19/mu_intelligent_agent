@@ -1,0 +1,154 @@
+{
+  "44cceee9-ecfc-4d06-acf0-792d3edb6886": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-05-12T17:44:12.710407"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today?",
+      "timestamp": "2026-05-12T17:44:12.741172"
+    },
+    {
+      "role": "user",
+      "content": "what are you?",
+      "timestamp": "2026-05-12T17:44:26.838586"
+    },
+    {
+      "role": "assistant",
+      "content": "I’m a virtual assistant here to help you with information about Mulungushi University and answer any questions you may have. How can I assist you today?",
+      "timestamp": "2026-05-12T17:44:26.860575"
+    },
+    {
+      "role": "user",
+      "content": "take me to edurole",
+      "timestamp": "2026-05-12T17:45:09.540759"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems I couldn't find the timetable page for EduRole. If you need help with something specific about it, please let me know!",
+      "timestamp": "2026-05-12T17:45:09.553864"
+    },
+    {
+      "role": "user",
+      "content": "what is my balance?",
+      "timestamp": "2026-05-12T17:46:43.337275"
+    },
+    {
+      "role": "assistant",
+      "content": "🔐 I need you to log into the student portal first.\n\nI'm unable to check your balance at the moment because you need to log in first. Please log in to your account, and then I can help you view your balance. If you have any other questions, feel free to ask!",
+      "timestamp": "2026-05-12T17:46:44.218465"
+    },
+    {
+      "role": "user",
+      "content": "okay open my portal",
+      "timestamp": "2026-05-12T17:47:14.977910"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm unable to open your student portal at the moment, as I couldn't find the page. Please try accessing it directly through the university's website. If you have any other questions or need assistance with something else, feel free to ask!",
+      "timestamp": "2026-05-12T17:47:15.007617"
+    },
+    {
+      "role": "user",
+      "content": "whats your name?",
+      "timestamp": "2026-05-12T17:47:45.598926"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm your friendly assistant here to help you with information about Mulungushi University! How can I assist you today?",
+      "timestamp": "2026-05-12T17:47:46.500107"
+    },
+    {
+      "role": "user",
+      "content": "im kayasa",
+      "timestamp": "2026-05-12T17:48:39.692477"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello Kayasa! How can I assist you today? If you have any questions or need help with something specific, feel free to ask!",
+      "timestamp": "2026-05-12T17:48:39.712465"
+    },
+    {
+      "role": "user",
+      "content": "whats the first thing i asked you?",
+      "timestamp": "2026-05-12T17:49:01.501605"
+    },
+    {
+      "role": "assistant",
+      "content": "Your first message was \"hi.\" How can I assist you further today, Kayasa?",
+      "timestamp": "2026-05-12T17:49:02.401127"
+    },
+    {
+      "role": "user",
+      "content": "and whats my most recent question?",
+      "timestamp": "2026-05-12T17:49:31.169999"
+    },
+    {
+      "role": "assistant",
+      "content": "Your most recent question was \"what's the first thing I asked you?\" If you have any more questions or need assistance, feel free to ask, Kayasa!",
+      "timestamp": "2026-05-12T17:49:32.051544"
+    },
+    {
+      "role": "user",
+      "content": "open my portal",
+      "timestamp": "2026-05-12T18:16:55.313305"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems I couldn't access your grades page, and I recommend checking your login status. Please ensure you're logged into your portal, and if you continue to have issues, let me know how else I can assist you!",
+      "timestamp": "2026-05-12T18:16:55.321621"
+    },
+    {
+      "role": "user",
+      "content": "what programs are offered at mulungushi",
+      "timestamp": "2026-05-12T18:18:33.908041"
+    },
+    {
+      "role": "assistant",
+      "content": "Mulungushi University offers a variety of undergraduate programs across several schools, including:\n\n- **School of Science and Technology**: Computer Science, Information Technology, Mathematics, Physics\n- **School of Business**: Business Administration, Accounting, Economics\n- **School of Law**: Bachelor of Laws (LLB)\n- **School of Social Sciences**: Public Administration, Development Studies, Psychology\n\nIf you need more information about specific programs or admission requirements, feel free to ask!",
+      "timestamp": "2026-05-12T18:18:34.782083"
+    },
+    {
+      "role": "user",
+      "content": "what programs are offered at mulungushi",
+      "timestamp": "2026-05-12T18:18:53.362998"
+    },
+    {
+      "role": "assistant",
+      "content": "Mulungushi University offers a range of undergraduate programs across various schools:\n\n- **School of Science and Technology**: Bachelor of Science in Computer Science, Information Technology, Mathematics, and Physics.\n- **School of Business**: Bachelor of Business Administration, Accounting, and Economics.\n- **School of Law**: Bachelor of Laws (LLB).\n- **School of Social Sciences**: Bachelor of Arts in Public Administration, Development Studies, and Psychology.\n\nIf you need more details about any specific program or admission requirements, just let me know!",
+      "timestamp": "2026-05-12T18:18:53.369326"
+    },
+    {
+      "role": "user",
+      "content": "what can you tell me about the fees",
+      "timestamp": "2026-05-12T18:19:20.601381"
+    },
+    {
+      "role": "assistant",
+      "content": "For the 2024/2025 academic year, Mulungushi University has the following tuition fees:\n\n**Undergraduate Programs:**\n- School of Science and Technology: K15,000 - K18,000 per year\n- School of Business: K14,000 - K16,000 per year\n- School of Law: K18,000 - K20,000 per year\n- School of Social Sciences: K12,000 - K14,000 per year\n\n**Postgraduate Programs:**\n- Master's Programs: K20,000 - K25,000 per year\n- PhD Programs: K25,000 - K30,000 per year\n\nAdditional fees include a registration fee of K500 per semester, an examination fee of K400 per semester, a library fee of K200 per semester, and an ICT fee of K300 per semester. Payments can be made via bank transfer, mobile money, or direct deposit at the Bursar's Office. If you have any more questions, feel free to ask!",
+      "timestamp": "2026-05-12T18:19:21.473789"
+    },
+    {
+      "role": "user",
+      "content": "what of the fees for bachelor of computer science",
+      "timestamp": "2026-05-12T18:22:08.024088"
+    },
+    {
+      "role": "assistant",
+      "content": "For the 2024/2025 academic year, the tuition fees at Mulungushi University are as follows:\n\n**Undergraduate Programs:**\n- School of Science and Technology: K15,000 - K18,000 per year\n- School of Business: K14,000 - K16,000 per year\n- School of Law: K18,000 - K20,000 per year\n- School of Social Sciences: K12,000 - K14,000 per year\n\nAdditional fees include K500 for registration, K400 for examinations, K200 for library access, and K300 for ICT services per semester. Payments can be made through bank transfer, mobile money, or direct deposit at the Bursar's Office. If you have any more questions, feel free to ask!",
+      "timestamp": "2026-05-12T18:22:08.896420"
+    },
+    {
+      "role": "user",
+      "content": "hello, what are the fees for computer science",
+      "timestamp": "2026-05-12T19:07:17.981093"
+    },
+    {
+      "role": "assistant",
+      "content": "For the Bachelor of Computer Science program at Mulungushi University, the tuition fees for the 2024/2025 academic year are K15,000 per semester, totaling K30,000 for the year. Additional fees include K500 for registration, K400 for examinations, K200 for library access, and K300 for ICT services per semester. If you have any more questions or need further details, feel free to ask!",
+      "timestamp": "2026-05-12T19:07:17.993496"
+    }
+  ]
+}

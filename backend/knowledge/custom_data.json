@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Master of Science in Artificial Intelligence",
+        "category": "programs",
+        "content": "Master of Science in Artificial Intelligence (MSc AI)\nDuration: 2 years\nSchool: School of Science and Technology\nRequirements: Bachelor's degree in CS/IT with merit\nFees: K 25,000 per year\n\nCore Courses: Machine Learning, Deep Learning, NLP, Computer Vision\nCareer: AI Engineer, Data Scientist, ML Researcher",
+        "metadata": {"program_type": "postgraduate", "duration_years": 2}
+    },
+    {
+        "title": "International Student Scholarship Information",
+        "category": "scholarships",
+        "content": "Mulungushi University International Student Scholarships\n\nAvailable Scholarships:\n1. Merit Scholarship: 50% tuition waiver for outstanding academics\n2. Sports Scholarship: 25% tuition waiver for national athletes\n3. Need-based Scholarship: Up to 100% for demonstrated financial need\n\nApplication Deadline: October 31st annually\nContact: scholarships@mu.ac.zm",
+        "metadata": {"scholarship_type": "international"}
+    }
+]

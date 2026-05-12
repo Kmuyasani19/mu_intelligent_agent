@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Mulungushi AI Assistant",
+  "version": "1.0.0",
+  "description": "AI assistant for Mulungushi University student portal",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "https://*https://edurole.mu.ac.zm/*",
+    "https://*.mu.ac.zm/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Mulungushi AI Assistant"
+  }
+}

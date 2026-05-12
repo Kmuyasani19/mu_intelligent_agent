@@ -1,0 +1,33 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "title": "Undergraduate Programs at Mulungushi University",
+      "content": "\n        Mulungushi University offers the following undergraduate programs:\n        \n        SCHOOL OF SCIENCE AND TECHNOLOGY:\n        - Bachelor of Science in Computer Science (4 years)\n        - Bachelor of Science in Information Technology (4 years)\n        - Bachelor of Science in Mathematics (4 years)\n        - Bachelor of Science in Physics (4 years)\n        \n        SCHOOL OF BUSINESS:\n        - Bachelor of Business Administration (4 years)\n        - Bachelor of Accounting (4 years)\n        - Bachelor of Economics (4 years)\n        \n        SCHOOL OF LAW:\n        - Bachelor of Laws (LLB) (5 years)\n        \n        SCHOOL OF SOCIAL SCIENCES:\n        - Bachelor of Arts in Public Administration\n        - Bachelor of Arts in Development Studies\n        - Bachelor of Arts in Psychology\n        ",
+      "category": "programs",
+      "added_date": "2026-05-12T18:14:08.338921"
+    },
+    {
+      "id": 2,
+      "title": "Tuition Fees Structure",
+      "content": "\n        Mulungushi University Tuition Fees (2024/2025 Academic Year):\n        \n        UNDERGRADUATE PROGRAMS:\n        - School of Science and Technology: K15,000 - K18,000 per year\n        - School of Business: K14,000 - K16,000 per year\n        - School of Law: K18,000 - K20,000 per year\n        - School of Social Sciences: K12,000 - K14,000 per year\n        \n        POSTGRADUATE PROGRAMS:\n        - Master's Programs: K20,000 - K25,000 per year\n        - PhD Programs: K25,000 - K30,000 per year\n        \n        Additional Fees:\n        - Registration Fee: K500 per semester\n        - Examination Fee: K400 per semester\n        - Library Fee: K200 per semester\n        - ICT Fee: K300 per semester\n        \n        Payment Methods:\n        - Bank Transfer (ZANACO Bank)\n        - Mobile Money (Airtel Money, MTN MoNey)\n        - Direct Deposit at Bursar's Office\n        ",
+      "category": "fees",
+      "added_date": "2026-05-12T18:14:08.344308"
+    },
+    {
+      "id": 3,
+      "title": "Admission Requirements",
+      "content": "\n        Mulungushi University Admission Requirements:\n        \n        UNDERGRADUATE REQUIREMENTS:\n        - Minimum 5 O-Level credits including English and Mathematics\n        - Credits must be from not more than 2 examination sittings\n        - Age: 16 years or older\n        - Application Fee: K300 for local students, USD50 for international\n        \n        SPECIFIC PROGRAM REQUIREMENTS:\n        - Science Programs: Credits in Mathematics, English, and 3 Science subjects\n        - Business Programs: Credits in Mathematics, English, and 3 other subjects\n        - Law: Credits in English and 4 other subjects with aggregate of 30 points\n        \n        APPLICATION DEADLINES:\n        - First Semester: November 30th\n        - Second Semester: May 31st\n        \n        CONTACT:\n        Admissions Office, Mulungushi University\n        Email: admissions@mu.ac.zm\n        Phone: +260 211 123456\n        ",
+      "category": "admissions",
+      "added_date": "2026-05-12T18:14:08.348211"
+    },
+    {
+      "id": 4,
+      "title": "Academic Calendar",
+      "content": "\n        Mulungushi University Academic Calendar 2025:\n        \n        FIRST SEMESTER 2025:\n        - Registration: January 6 - January 17, 2025\n        - Lectures Begin: January 20, 2025\n        - Mid-Semester Break: March 10 - March 14, 2025\n        - Lectures End: April 25, 2025\n        - Examinations: April 28 - May 16, 2025\n        \n        SECOND SEMESTER 2025:\n        - Registration: June 2 - June 13, 2025\n        - Lectures Begin: June 16, 2025\n        - Mid-Semester Break: August 4 - August 8, 2025\n        - Lectures End: September 19, 2025\n        - Examinations: September 22 - October 10, 2025\n        \n        IMPORTANT DATES:\n        - Graduation Ceremony: December 5, 2025\n        - University Closed: December 15, 2025 - January 5, 2026\n        ",
+      "category": "calendar",
+      "added_date": "2026-05-12T18:14:08.352046"
+    }
+  ],
+  "last_id": 4
+}

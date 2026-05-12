@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      width: 350px;
+    }
+    .chat-header {
+      padding: 16px;
+      background: #0f3460;
+      border-bottom: 1px solid #16213e;
+    }
+    .chat-header h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .chat-header p {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .message {
+      padding: 10px 12px;
+      border-radius: 12px;
+      max-width: 85%;
+      word-wrap: break-word;
+      font-size: 13px;
+    }
+    .user-message {
+      background: #0f3460;
+      align-self: flex-end;
+    }
+    .assistant-message {
+      background: #16213e;
+      align-self: flex-start;
+    }
+    .chat-input-container {
+      padding: 12px;
+      border-top: 1px solid #16213e;
+      display: flex;
+      gap: 8px;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #0f3460;
+      border-radius: 20px;
+      background: #16213e;
+      color: #eee;
+      font-size: 13px;
+      outline: none;
+    }
+    .chat-input:focus {
+      border-color: #e94560;
+    }
+    .send-button {
+      padding: 10px 16px;
+      background: #e94560;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .send-button:hover {
+      background: #c73e5a;
+    }
+    .loading {
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h3>🎓 Mulungushi AI Assistant</h3>
+      <p>Ask about your grades, balance, or courses</p>
+    </div>
+    <div class="chat-messages" id="messages"></div>
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" id="input" placeholder="e.g., Check my last semester grades...">
+      <button class="send-button" id="send">Send</button>
+    </div>
+  </div>
+  <script src="sidebar.js"></script>
+</body>
+</html>

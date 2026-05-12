@@ -1,0 +1,15 @@
+sample.txt
+2024-2025_fees_postgrad copy.pdf
+2024-2025_fees_postgrad.pdf
+2024-2025_fees_undergrad_distance copy.pdf
+2024-2025_fees_undergrad_distance.pdf
+2024-2025_sem1_fees_undergrad_fulltime copy.pdf
+2024-2025_sem1_fees_undergrad_fulltime.pdf
+737-Revised Academic Regulations Nov 2025-Final Most 18.12.2025.pdf
+Building a Deep Research AI Agent - Analytics Vidhya.pdf
+Mulungushi University 2025 2026 CALENDAR.pdf
+Notice to Student Populace concerning NHIMA.pdf
+Public Notice-Mulungushi University 2026-2027 Academic Year Application Process 2.pdf
+.processed_files.txt
+admission_requirements.txt
+JUNE_2026_EXAMINATIONS_TIME_TABLE_SECOND_DRAFT_1_7KPkuSQ.xlsx
