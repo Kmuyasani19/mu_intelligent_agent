@@ -10,7 +10,7 @@ class PortalNavigator:
         self.base_url = "https://edurole.mu.ac.zm"
         self.main_site = "https://www.mu.ac.zm"
         
-     # Page URL mappings
+        # Page URL mappings
         self.page_urls = {
             "grades": f"{self.base_url}/grades",
             "balance": f"{self.base_url}/payments/personal",
@@ -23,7 +23,68 @@ class PortalNavigator:
             "dashboard": f"{self.base_url}/dashboard",
             "home": self.main_site
         }
-
+    
+    # ============ NEW METHODS TO ADD ============
+    
+    async def open_portal(self) -> Tuple[bool, str]:
+        """Open the EduRole portal homepage"""
+        try:
+            await self.page.goto(self.base_url, wait_until="domcontentloaded", timeout=30000)
+            return True, "Portal opened"
+        except Exception as e:
+            print(f"   Error opening portal: {e}")
+            # Try alternative URL
+            try:
+                await self.page.goto("https://edurole.mu.ac.zm", wait_until="domcontentloaded", timeout=30000)
+                return True, "Portal opened"
+            except:
+                return False, str(e)
+    
+    async def navigate_to_page(self, page_name: str) -> Tuple[bool, str]:
+        """Navigate to a specific portal page using URL or menu click"""
+        try:
+            # First try direct URL
+            url = self.page_urls.get(page_name.lower())
+            if url:
+                await self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                return True, f"Navigated to {page_name}"
+            
+            # If no direct URL, try clicking menu
+            page_map = {
+                "grades": "Grades",
+                "balance": "Payments",
+                "payments": "Payments",
+                "courses": "Course registration",
+                "timetable": "Timetable",
+                "accommodation": "Apply for Accommodation"
+            }
+            
+            menu_text = page_map.get(page_name.lower(), page_name)
+            
+            clicked = await self.page.evaluate(f'''
+                () => {{
+                    const links = document.querySelectorAll('a, .nav-item, .menu-item');
+                    for (const link of links) {{
+                        if (link.innerText.toLowerCase().includes('{menu_text.lower()}')) {{
+                            link.click();
+                            return true;
+                        }}
+                    }}
+                    return false;
+                }}
+            ''')
+            
+            if clicked:
+                await self.page.wait_for_load_state("networkidle")
+                return True, f"Navigated to {menu_text}"
+            
+            return False, f"Could not find {page_name}"
+            
+        except Exception as e:
+            return False, str(e)
+    
+    # ============ EXISTING METHODS BELOW ============
+    
     async def check_logged_in(self) -> bool:
         """Check if user is logged into the portal"""
         try:
@@ -47,7 +108,6 @@ class PortalNavigator:
     async def navigate_to(self, page_name: str) -> Tuple[bool, str]:
         """Navigate to a portal page by clicking menu items"""
         try:
-            # Map of page names to menu text
             page_map = {
                 "grades": "Grades",
                 "balance": "Payments",

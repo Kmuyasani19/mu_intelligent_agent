@@ -150,5 +150,107 @@
       "content": "For the Bachelor of Computer Science program at Mulungushi University, the tuition fees for the 2024/2025 academic year are K15,000 per semester, totaling K30,000 for the year. Additional fees include K500 for registration, K400 for examinations, K200 for library access, and K300 for ICT services per semester. If you have any more questions or need further details, feel free to ask!",
       "timestamp": "2026-05-12T19:07:17.993496"
     }
+  ],
+  "8c27e7f0-3a03-4020-b14f-548ddb842c7e": [
+    {
+      "role": "user",
+      "content": "hello, what are you and what can you do?",
+      "timestamp": "2026-05-15T19:10:02.349130"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm an AI assistant here to help you with information about Mulungushi University. I can provide details about courses, admission processes, campus facilities, and more. If you have any specific questions, feel free to ask!",
+      "timestamp": "2026-05-15T19:10:02.370530"
+    },
+    {
+      "role": "user",
+      "content": "what can you tell me about fees",
+      "timestamp": "2026-05-15T19:10:25.182673"
+    },
+    {
+      "role": "assistant",
+      "content": "Mulungushi University has a structured fee schedule for both postgraduate and undergraduate programs. For postgraduate students, the annual tuition fee is K17,350 across various schools. For undergraduate full-time students, tuition fees range from K14,810 to K26,830 depending on the program, with additional lodging fees for accommodation options. If you need more specific details or have further questions, feel free to ask!",
+      "timestamp": "2026-05-15T19:10:25.211000"
+    },
+    {
+      "role": "user",
+      "content": "check my grades",
+      "timestamp": "2026-05-15T19:10:58.773676"
+    },
+    {
+      "role": "assistant",
+      "content": "🔐 I need you to log into the student portal first.\n\nIt looks like you need to log in to view your grades. Please log in to your student account, and then you’ll be able to check your grades. If you have any other questions or need assistance, feel free to ask!",
+      "timestamp": "2026-05-15T19:10:58.779741"
+    },
+    {
+      "role": "user",
+      "content": "check my grades",
+      "timestamp": "2026-05-15T19:11:55.701553"
+    },
+    {
+      "role": "assistant",
+      "content": "🔐 I need you to log into the student portal first.\n\nIt looks like you need to log in to your student account to view your grades. Please log in, and then you’ll be able to check them. If you have any other questions or need assistance, feel free to ask!",
+      "timestamp": "2026-05-15T19:11:56.575210"
+    },
+    {
+      "role": "user",
+      "content": "check my courses",
+      "timestamp": "2026-05-15T19:15:26.556567"
+    },
+    {
+      "role": "assistant",
+      "content": "🔐 I need you to log into the student portal first.\n\n🔐 It seems you need to log in to your student account to view your courses. Please log in, and then you’ll be able to check your course details. If you have any other questions or need assistance, feel free to ask!",
+      "timestamp": "2026-05-15T19:15:26.564212"
+    },
+    {
+      "role": "user",
+      "content": "hello, what are you and check my grades",
+      "timestamp": "2026-05-15T19:26:23.010207"
+    },
+    {
+      "role": "assistant",
+      "content": "🔐 I need you to log into the student portal first.\n\n🔐 It looks like you need to log into your student account to check your courses. Please log in to the student portal, and then you’ll be able to access that information. If you have any other questions or need help, just let me know!",
+      "timestamp": "2026-05-15T19:26:23.040430"
+    },
+    {
+      "role": "user",
+      "content": "logged in",
+      "timestamp": "2026-05-15T19:27:16.994330"
+    },
+    {
+      "role": "assistant",
+      "content": "✅ I've opened the Grades page for you. Please check the page to see your grades. If you need any further assistance, feel free to ask!",
+      "timestamp": "2026-05-15T19:27:17.889226"
+    },
+    {
+      "role": "user",
+      "content": "check my balance",
+      "timestamp": "2026-05-15T19:28:59.383809"
+    },
+    {
+      "role": "assistant",
+      "content": "✅ I've opened the Payments page. Please check the page to see your balance. If you have any other questions or need further assistance, just let me know!",
+      "timestamp": "2026-05-15T19:29:00.271129"
+    },
+    {
+      "role": "user",
+      "content": "check my courses",
+      "timestamp": "2026-05-15T19:29:17.101241"
+    },
+    {
+      "role": "assistant",
+      "content": "✅ I've opened the Course Registration page. Please check the page to see your enrolled courses. If you have any other questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-15T19:29:17.124695"
+    },
+    {
+      "role": "user",
+      "content": "what are the fees for this semester",
+      "timestamp": "2026-05-15T19:30:03.186336"
+    },
+    {
+      "role": "assistant",
+      "content": "The fees for this semester at Mulungushi University are as follows:\n\n**Tuition Fees:**\n- School of Agriculture and Natural Resources: K12,050 (per semester)\n- School of Business Studies: K11,760 (per semester)\n- School of Social Sciences: K11,760 (per semester)\n- School of Education: K7,405 (per semester)\n- School of Engineering & Technology: K12,050 (per semester)\n- School of Natural and Applied Sciences: K12,050 (per semester)\n- School of Medicine & Health Sciences: K13,415 (per semester)\n\n**Lodging Fees:**\n- Self-catering Hostel - High rise: K3,110 (per semester)\n- Self-catering - Up School/Down School: K2,100 (per semester)\n\nIf you need more details or have any other questions, feel free to ask!",
+      "timestamp": "2026-05-15T19:30:03.216024"
+    }
   ]
 }
