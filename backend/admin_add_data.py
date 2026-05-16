@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-"""Admin script to manage the knowledge base - with file deletion"""
+"""Admin script to manage the knowledge base - with delete all functionality"""
 
 import sys
 import os
 from pathlib import Path
 import shutil
+import json
 
 sys.path.insert(0, os.path.dirname(__file__))
 
@@ -32,7 +33,7 @@ def show_help():
     💡 QUICK START:
     1. Place your documents in the 'raw_docs' folder
     2. Run this script and select option 1 to ingest
-    3. Use option 3 to manage/delete files
+    3. Use options to manage/delete files
     
     ========================================
     """)
@@ -118,10 +119,53 @@ def delete_file_from_raw_docs():
     else:
         print("   Cancelled")
 
-def delete_from_knowledge_base():
+def delete_all_from_knowledge_base():
+    """Delete ALL documents from the knowledge base"""
+    print("\n" + "=" * 50)
+    print("DELETE ALL FROM KNOWLEDGE BASE")
+    print("=" * 50)
+    
+    from knowledge.vector_store import get_knowledge_base
+    
+    kb = get_knowledge_base()
+    stats = kb.get_stats()
+    
+    if stats['count'] == 0:
+        print("📚 Knowledge base is already empty")
+        return
+    
+    print(f"\n⚠️  WARNING: You are about to delete ALL {stats['count']} documents from the knowledge base!")
+    print(f"   Categories affected: {', '.join(stats['categories'])}")
+    print("\n   This action CANNOT be undone!")
+    print("\n   Type 'DELETE ALL' to confirm: ")
+    confirm = input("   Confirm: ").strip()
+    
+    if confirm != "DELETE ALL":
+        print("   ❌ Cancelled - No changes made")
+        return
+    
+    # Delete the entire knowledge database
+    knowledge_db_path = Path("./knowledge_db")
+    if knowledge_db_path.exists():
+        shutil.rmtree(knowledge_db_path)
+        print(f"   ✅ Deleted knowledge database folder")
+    
+    # Also delete the processed files tracking
+    raw_docs = Path("./raw_docs")
+    processed_file = raw_docs / ".processed_files.txt"
+    if processed_file.exists():
+        processed_file.unlink()
+        print(f"   ✅ Cleared processed files tracking")
+    
+    # Create fresh knowledge base
+    kb = get_knowledge_base()
+    print(f"\n   ✅ Successfully deleted ALL {stats['count']} documents")
+    print(f"   📚 Knowledge base is now empty")
+
+def delete_document_from_knowledge_base():
     """Delete specific document from knowledge base by title search"""
     print("\n" + "=" * 50)
-    print("DELETE FROM KNOWLEDGE BASE (by title search)")
+    print("DELETE DOCUMENT FROM KNOWLEDGE BASE (by title search)")
     print("=" * 50)
     
     from knowledge.vector_store import get_knowledge_base
@@ -134,7 +178,7 @@ def delete_from_knowledge_base():
         print("No documents in knowledge base")
         return
     
-    print("\n   Enter search term to find documents to delete (e.g., 'analytics', 'vidhya'):")
+    print("\n   Enter search term to find documents to delete (e.g., 'exam', 'fees'):")
     search_term = input("   Search: ").strip().lower()
     
     if not search_term:
@@ -142,19 +186,18 @@ def delete_from_knowledge_base():
         return
     
     # Search for matching documents
-    results = kb.search(search_term, k=20)  # Get more results
+    results = kb.search(search_term, k=50)
     
     if not results:
         print(f"   No documents found matching '{search_term}'")
         return
     
     print(f"\n   Found {len(results)} documents matching '{search_term}':")
-    print("   " + "-" * 40)
+    print("   " + "-" * 50)
     
     for i, doc in enumerate(results, 1):
         title = doc.get('title', 'Unknown')
         category = doc.get('category', 'general')
-        # Preview first 100 chars
         content_preview = doc.get('content', '')[:100].replace('\n', ' ')
         print(f"   {i:2}. {title} [{category}]")
         print(f"       Preview: {content_preview}...")
@@ -190,96 +233,76 @@ def delete_from_knowledge_base():
         print("   Cancelled")
         return
     
-    # Delete from knowledge base
-    # This depends on your storage type
-    deleted_count = 0
-    
-    # For simple store
-    if hasattr(kb, 'simple_store') and kb.simple_store:
-        original_count = len(kb.simple_store.data['documents'])
-        titles_to_delete = [results[i]['title'] for i in indices_to_delete]
-        
-        kb.simple_store.data['documents'] = [
-            doc for doc in kb.simple_store.data['documents']
-            if doc['title'] not in titles_to_delete
-        ]
-        deleted_count = original_count - len(kb.simple_store.data['documents'])
-        kb.simple_store._save()
-        
-    # For Chroma store
-    elif hasattr(kb, 'vector_store') and kb.vector_store:
-        all_docs = kb.vector_store.get()
-        ids_to_delete = []
-        
-        for i, metadata in enumerate(all_docs['metadatas']):
-            title = metadata.get('title', '')
-            if title in [results[idx]['title'] for idx in indices_to_delete]:
-                ids_to_delete.append(all_docs['ids'][i])
-        
-        if ids_to_delete:
-            kb.vector_store.delete(ids=ids_to_delete)
-            deleted_count = len(ids_to_delete)
-    
-    print(f"\n   ✅ Deleted {deleted_count} document(s) from knowledge base")
-    
-    # Also offer to delete source files
-    print(f"\n   Do you also want to delete the source files from raw_docs? (y/n)")
-    delete_source = input("   Delete source files: ").strip().lower()
-    
-    if delete_source == 'y':
-        raw_docs = Path("./raw_docs")
-        deleted_files = 0
-        for idx in indices_to_delete:
-            title = results[idx]['title']
-            # Try to find matching file
-            for file in raw_docs.glob("*"):
-                if title.lower() in file.stem.lower():
-                    file.unlink()
-                    deleted_files += 1
-                    print(f"      Deleted: {file.name}")
-                    break
-        print(f"   ✅ Deleted {deleted_files} source file(s)")
+    # This requires re-creating the knowledge base without those documents
+    # Since we're using a simple JSON store, we need to reload and filter
+    knowledge_db_path = Path("./knowledge_db")
+    if knowledge_db_path.exists():
+        # Read current data
+        knowledge_file = knowledge_db_path / "knowledge.json"
+        if knowledge_file.exists():
+            with open(knowledge_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Get titles to delete
+            titles_to_delete = [results[i]['title'] for i in indices_to_delete]
+            
+            # Filter out documents to delete
+            original_count = len(data['documents'])
+            data['documents'] = [doc for doc in data['documents'] if doc.get('title') not in titles_to_delete]
+            deleted_count = original_count - len(data['documents'])
+            
+            # Save updated data
+            with open(knowledge_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            
+            print(f"\n   ✅ Deleted {deleted_count} document(s) from knowledge base")
+        else:
+            print("   ❌ Knowledge file not found")
+    else:
+        print("   ❌ Knowledge database not found")
 
-def show_knowledge_base_contents():
-    """Show all documents in knowledge base with ability to delete"""
+def delete_all_from_raw_docs():
+    """Delete ALL files from raw_docs folder"""
     print("\n" + "=" * 50)
-    print("KNOWLEDGE BASE CONTENTS")
+    print("DELETE ALL FROM RAW_DOCS")
     print("=" * 50)
     
-    from knowledge.vector_store import get_knowledge_base
+    raw_docs = Path("./raw_docs")
     
-    kb = get_knowledge_base()
-    stats = kb.get_stats()
-    print(f"\n📚 Total documents: {stats['count']}")
-    print(f"📂 Categories: {', '.join(stats['categories'])}")
-    
-    if stats['count'] == 0:
+    if not raw_docs.exists():
+        print("❌ raw_docs folder does not exist")
         return
     
-    print("\n   Enter search term to view specific documents (or 'all' for all):")
-    search_term = input("   Search: ").strip().lower()
+    files = list(raw_docs.glob("*"))
+    files = [f for f in files if f.is_file() and not f.name.startswith('.')]
     
-    if not search_term:
+    if not files:
+        print("No files to delete")
         return
     
-    if search_term == 'all':
-        results = kb.search("", k=100)  # Get all
-    else:
-        results = kb.search(search_term, k=50)
+    print(f"\n⚠️  WARNING: You are about to delete ALL {len(files)} files from raw_docs folder!")
+    print("\n   This action CANNOT be undone!")
+    print("\n   Type 'DELETE ALL' to confirm: ")
+    confirm = input("   Confirm: ").strip()
     
-    if not results:
-        print(f"   No documents found")
+    if confirm != "DELETE ALL":
+        print("   ❌ Cancelled - No changes made")
         return
     
-    print(f"\n   Found {len(results)} documents:")
-    print("   " + "-" * 50)
+    # Delete all files
+    deleted_count = 0
+    for file in files:
+        file.unlink()
+        deleted_count += 1
+        print(f"   ✅ Deleted: {file.name}")
     
-    for i, doc in enumerate(results, 1):
-        title = doc.get('title', 'Unknown')
-        category = doc.get('category', 'general')
-        content_len = len(doc.get('content', ''))
-        print(f"   {i:2}. {title}")
-        print(f"       Category: {category}, Size: {content_len} chars")
+    # Also delete processed files tracking
+    processed_file = raw_docs / ".processed_files.txt"
+    if processed_file.exists():
+        processed_file.unlink()
+        print(f"   ✅ Cleared processed files tracking")
+    
+    print(f"\n   ✅ Successfully deleted ALL {deleted_count} files from raw_docs")
 
 def main():
     show_help()
@@ -296,10 +319,12 @@ def main():
         print("3. 🔍 Test search")
         print("4. 🗑️ Delete file from raw_docs")
         print("5. 🗑️ Delete document from knowledge base (by search)")
-        print("6. 📋 Show knowledge base contents")
-        print("7. 🚪 Exit")
+        print("6. 🗑️ DELETE ALL from knowledge base")
+        print("7. 🗑️ DELETE ALL from raw_docs folder")
+        print("8. 📋 Show knowledge base contents")
+        print("9. 🚪 Exit")
         
-        choice = input("\nSelect option (1-7): ")
+        choice = input("\nSelect option (1-9): ")
         
         if choice == '1':
             print("\n" + "=" * 50)
@@ -363,12 +388,50 @@ def main():
             delete_file_from_raw_docs()
         
         elif choice == '5':
-            delete_from_knowledge_base()
+            delete_document_from_knowledge_base()
         
         elif choice == '6':
-            show_knowledge_base_contents()
+            delete_all_from_knowledge_base()
         
         elif choice == '7':
+            delete_all_from_raw_docs()
+        
+        elif choice == '8':
+            print("\n" + "=" * 50)
+            print("KNOWLEDGE BASE CONTENTS")
+            print("=" * 50)
+            
+            from knowledge.vector_store import get_knowledge_base
+            kb = get_knowledge_base()
+            stats = kb.get_stats()
+            
+            print(f"\n📚 Total documents: {stats['count']}")
+            print(f"📂 Categories: {', '.join(stats['categories'])}")
+            
+            if stats['count'] == 0:
+                print("\n   No documents in knowledge base")
+            else:
+                print("\n   Enter search term to view documents (or 'all' for all):")
+                search_term = input("   Search: ").strip().lower()
+                
+                if not search_term:
+                    continue
+                
+                results = kb.search(search_term, k=100) if search_term == 'all' else kb.search(search_term, k=50)
+                
+                if not results:
+                    print(f"   No documents found")
+                else:
+                    print(f"\n   Found {len(results)} documents:")
+                    print("   " + "-" * 50)
+                    for i, doc in enumerate(results, 1):
+                        title = doc.get('title', 'Unknown')
+                        category = doc.get('category', 'general')
+                        content_len = len(doc.get('content', ''))
+                        print(f"   {i:2}. {title}")
+                        print(f"       Category: {category}, Size: {content_len} chars")
+        
+        elif choice == '9':
             print("Goodbye!")
             break
         else:

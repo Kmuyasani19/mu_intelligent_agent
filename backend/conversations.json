@@ -251,6 +251,116 @@
       "role": "assistant",
       "content": "The fees for this semester at Mulungushi University are as follows:\n\n**Tuition Fees:**\n- School of Agriculture and Natural Resources: K12,050 (per semester)\n- School of Business Studies: K11,760 (per semester)\n- School of Social Sciences: K11,760 (per semester)\n- School of Education: K7,405 (per semester)\n- School of Engineering & Technology: K12,050 (per semester)\n- School of Natural and Applied Sciences: K12,050 (per semester)\n- School of Medicine & Health Sciences: K13,415 (per semester)\n\n**Lodging Fees:**\n- Self-catering Hostel - High rise: K3,110 (per semester)\n- Self-catering - Up School/Down School: K2,100 (per semester)\n\nIf you need more details or have any other questions, feel free to ask!",
       "timestamp": "2026-05-15T19:30:03.216024"
+    },
+    {
+      "role": "user",
+      "content": "hello, what can you tell me about the fees",
+      "timestamp": "2026-05-16T10:48:17.193457"
+    },
+    {
+      "role": "assistant",
+      "content": "The fees for this semester at Mulungushi University are as follows:\n\n**Tuition Fees:**\n- School of Agriculture and Natural Resources: K12,050\n- School of Business Studies: K11,760\n- School of Social Sciences: K11,760\n- School of Education: K7,405\n- School of Engineering & Technology: K12,050\n- School of Natural and Applied Sciences: K12,050\n- School of Medicine & Health Sciences: K13,415\n\n**Lodging Fees:**\n- Self-catering Hostel - High rise: K3,110\n- Self-catering - Up School/Down School: K2,100\n\nIf you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:48:17.221765"
+    },
+    {
+      "role": "user",
+      "content": "when is ict 312 exam",
+      "timestamp": "2026-05-16T10:48:53.920211"
+    },
+    {
+      "role": "assistant",
+      "content": "The ICT 312 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:48:53.948880"
+    },
+    {
+      "role": "user",
+      "content": "are you sure",
+      "timestamp": "2026-05-16T10:49:31.976837"
+    },
+    {
+      "role": "assistant",
+      "content": "The ICT 312 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:49:32.860448"
+    },
+    {
+      "role": "user",
+      "content": "what of ict 332",
+      "timestamp": "2026-05-16T10:49:57.249449"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I can confirm that the ICT 312 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any other questions or need further information, feel free to ask!",
+      "timestamp": "2026-05-16T10:49:57.271540"
+    },
+    {
+      "role": "user",
+      "content": "when is ict 332 exam",
+      "timestamp": "2026-05-16T10:50:58.290737"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize for the confusion earlier. The ICT 332 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:50:59.209513"
+    },
+    {
+      "role": "user",
+      "content": "when is the exam for ICT 332",
+      "timestamp": "2026-05-16T10:55:06.946929"
+    },
+    {
+      "role": "assistant",
+      "content": "The ICT 332 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:55:06.966844"
+    },
+    {
+      "role": "user",
+      "content": "what of ict  362",
+      "timestamp": "2026-05-16T10:55:32.056776"
+    },
+    {
+      "role": "assistant",
+      "content": "The ICT 332 exam is scheduled for **June 1, 2026**, at **08:45 HRS**. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:55:32.077308"
+    },
+    {
+      "role": "user",
+      "content": "are you sure",
+      "timestamp": "2026-05-16T10:55:50.840786"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I'm here to help! What do you need assistance with regarding Mulungushi University? If you have questions about the ICT 362 exam or anything else, feel free to ask!",
+      "timestamp": "2026-05-16T10:55:51.740416"
+    },
+    {
+      "role": "user",
+      "content": "when is the ict 362 exam?",
+      "timestamp": "2026-05-16T10:56:24.279753"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize for the confusion earlier. Unfortunately, I do not have specific information regarding the ICT 362 exam schedule. If you need further assistance or have other questions, please let me know!",
+      "timestamp": "2026-05-16T10:56:25.167422"
+    },
+    {
+      "role": "user",
+      "content": "what can you tell me about acadmic regulations regarding missing an exam",
+      "timestamp": "2026-05-16T10:57:05.004844"
+    },
+    {
+      "role": "assistant",
+      "content": "Regarding academic regulations for missing an exam at Mulungushi University, students are typically required to provide valid reasons for their absence, such as medical emergencies or other significant circumstances. It's important to notify the relevant academic authorities as soon as possible and follow the university's procedures for requesting a deferred exam. For specific details, please refer to the university's academic regulations or contact the Dean of Students' office. If you have any more questions, feel free to ask!",
+      "timestamp": "2026-05-16T10:57:05.026713"
+    },
+    {
+      "role": "user",
+      "content": "what are the procedures",
+      "timestamp": "2026-05-16T10:57:34.922284"
+    },
+    {
+      "role": "assistant",
+      "content": "For information regarding academic regulations about missing an exam at Mulungushi University, students must provide valid reasons for their absence and notify the relevant authorities promptly. It's advisable to refer to the university's academic regulations or contact the Dean of Students' office for specific procedures. If you have any more questions or need further assistance, feel free to ask!",
+      "timestamp": "2026-05-16T10:57:35.820257"
     }
   ]
 }

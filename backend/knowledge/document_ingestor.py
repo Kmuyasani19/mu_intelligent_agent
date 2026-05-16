@@ -31,19 +31,13 @@ class SimpleDocumentIngestor:
         self.processed_files.add(filename)
     
     def extract_text_from_pdf(self, file_path: Path) -> str:
-        """Extract text from PDF file"""
+        """Extract text from PDF file using the knowledge base method"""
         try:
-            from pypdf import PdfReader
-            reader = PdfReader(file_path)
-            text = ""
-            for page in reader.pages:
-                page_text = page.extract_text()
-                if page_text:
-                    text += page_text + "\n"
-            return text
-        except ImportError:
-            print("   ⚠️ pypdf not installed. Run: pip install pypdf")
-            return ""
+            from knowledge.vector_store import get_knowledge_base
+            kb = get_knowledge_base()
+            # This will add the PDF directly with proper parsing
+            kb.add_pdf_document(str(file_path))
+            return ""  # Return empty since it's handled by add_pdf_document
         except Exception as e:
             print(f"   Error reading PDF: {e}")
             return ""
